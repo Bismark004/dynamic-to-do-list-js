@@ -14,29 +14,32 @@ document.addEventListener('DOMContentLoaded', () => {
         if (taskText === '') {
             alert('Please enter a task.');
             return;
-        }
-
-        // Create a new list item element
-        const listItem = document.createElement('li');
-        listItem.textContent = taskText;
+        } else {
+            // Create a new list item element
+            const listItem = document.createElement('li');
+            listItem.textContent = taskText;
 
         // Create a remove button for the task
-        const removeButton = document.createElement('button');
-        removeButton.textContent = 'Remove';
-        removeButton.className = 'remove-btn';
+           const removeButton = document.createElement('button');
+           removeButton.textContent = 'Remove';
+          removeButton.className = 'remove-btn';
 
         // Assign an event to the remove button to remove the task
-        removeButton.onclick = () => {
+           removeButton.onclick = () => {
             taskList.removeChild(listItem);
         };
 
         // Append the remove button to the list item
-        listItem.appendChild(removeButton);
-        // Append the list item to the task list
-        taskList.appendChild(listItem);
-
+            listItem.appendChild(removeButton);
+            // Append the list item to the task list
+            taskList.appendChild(listItem);
+ 
         // Clear the input field
-        taskInput.value = '';
+           taskInput.value = '';
+
+        }
+
+        
     }
 
     // Add an event listener to the Add Task button
@@ -46,6 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
     taskInput.addEventListener('keypress', (event) => {
         if (event.key === 'Enter') {
             addTask();
-        }
+        } 
     });
 });
