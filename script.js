@@ -65,15 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add an event listener to the Add Task button
     addButton.addEventListener('click', function(){
-        const taskText = taskInput.value.trim();
-        addTask(taskText);
+        addTask();
     });
 
     // Add an event listener to allow adding tasks by pressing Enter
     taskInput.addEventListener('keypress', function(event){
         if (event.key === 'Enter') {
-            const taskText = taskInput.value.trim();
-            addTask(taskText);
+            addTask();
         }
     });
 });
